@@ -1,0 +1,13 @@
+#lang racket
+(define (removelast xs)
+(cond
+((null? (cdr xs)) '())
+(else (cons (car xs) (removelast (cdr xs))))
+  )
+  )
+(define (prefixes xs)
+  (cond
+    ((null? xs) xs)
+    (else (cons xs (prefixes (removelast xs))))
+    )
+)
